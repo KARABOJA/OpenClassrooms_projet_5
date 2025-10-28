@@ -36,6 +36,9 @@ Avoir Docker déjà installé.
 ## contenu du fichier pyproject.toml
 
 [project]
+name=
+
+[project]
 name = "csv-mongodb"
 version = "0.1.0"
 description = ""
