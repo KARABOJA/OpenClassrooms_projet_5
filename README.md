@@ -7,7 +7,7 @@ L'objectif est de migrer des données d'un fichier CSV vers une base de données
 # Pré-requis 
 Avoir Docker déjà installé.
 
-# Mise en place de l'architecture
+# Architecture
 
 <img width="1149" height="645" alt="image" src="https://github.com/user-attachments/assets/a292aa99-0814-46de-9a0a-90191e24c4fa" />
 
