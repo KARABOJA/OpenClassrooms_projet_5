@@ -12,4 +12,5 @@ Avoir Docker déjà installé.
 
 # Lancement des scripts
 
-
+# Arborescence du dossier copier dans le container (dockerfile command lors du Build de l'image : COPY /migration /migration)
+<img width="340" height="668" alt="image" src="https://github.com/user-attachments/assets/1e5beec5-f375-43a8-890e-66a179a7d08a" />
