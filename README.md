@@ -19,11 +19,11 @@ Avoir Docker déjà installé.
   COPY /migration /migration
   
   ### On met à jour les dépendances système afin de limiter les risques 
-  RUN apk update
+  RUN apk update<br/>
   RUN apk upgrade
   
   ### install build dependencies and needed tools
-  RUN apk add python3
+  RUN apk add python3<br/>
   RUN apk add poetry
   
   ### garder le container actif
@@ -35,21 +35,18 @@ Avoir Docker déjà installé.
 
 ## contenu du fichier pyproject.toml
 
-[project]
-name=
-
-[project]
-name = "csv-mongodb"
-version = "0.1.0"
-description = ""
-authors = [{name = "******"}]
-readme = "README.md"
-requires-python = ">=3.12"
-dependencies = ["pymongo (>=4.15.3,<5.0.0)"]
-
-[build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+[project]<br/>
+name = "csv-mongodb"<br/>
+version = "0.1.0"<br/>
+description = ""<br/>
+authors = [{name = "******"}]<br/>
+readme = "README.md"<br/>
+requires-python = ">=3.12"<br/>
+dependencies = ["pymongo (>=4.15.3,<5.0.0)"]<br/>
+<br/>
+[build-system]<br/>
+requires = ["poetry-core>=2.0.0,<3.0.0"]<br/>
+build-backend = "poetry.core.masonry.api"<br/>
 
 
 ## Lancement des scripts
