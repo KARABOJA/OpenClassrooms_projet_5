@@ -39,14 +39,10 @@ Avoir Docker déjà installé.
 name = "csv-mongodb"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "******"}
-]
+authors = [{name = "******"}]
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = [
-    "pymongo (>=4.15.3,<5.0.0)"
-]
+dependencies = ["pymongo (>=4.15.3,<5.0.0)"]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
