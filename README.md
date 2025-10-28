@@ -13,24 +13,25 @@ Avoir Docker déjà installé.
 
   FROM alpine:3.22
   
-  ### Notre répertoire de travail sera la racine du système de fichier du conteneur
-  WORKDIR /·
-  ### copie du dossier dans le container
-  COPY /migration /migration
+  \# Notre répertoire de travail sera la racine du système de fichier du conteneur<br/>
+  WORKDIR /·<br/>
   
-  ### On met à jour les dépendances système afin de limiter les risques 
+  \# copie du dossier dans le container<br/>
+  COPY /migration /migration<br/>
+  
+  \# On met à jour les dépendances système afin de limiter les risques <br/>
   RUN apk update<br/>
-  RUN apk upgrade
+  RUN apk upgrade<br/>
   
-  ### install build dependencies and needed tools
+  \# install build dependencies and needed tools<br/>
   RUN apk add python3<br/>
-  RUN apk add poetry
+  RUN apk add poetry<br/>
   
-  ### garder le container actif
-  CMD ["sh", "-c", "tail -f /dev/null"]
+  \# garder le container actif<br/>
+  CMD ["sh", "-c", "tail -f /dev/null"]<br/>
 
 
-## Arborescence du dossier copié dans le container (dockerfile command lors du Build de l'image : COPY /migration /migration)
+## Arborescence du dossier copié dans le container (command dockerfile : COPY /migration /migration)
 <img width="340" height="668" alt="image" src="https://github.com/user-attachments/assets/1e5beec5-f375-43a8-890e-66a179a7d08a" />
 
 ## contenu du fichier pyproject.toml
