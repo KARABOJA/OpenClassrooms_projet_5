@@ -9,7 +9,14 @@ Avoir Docker déjà installé.
 
 # Mise en place de l'architecture
 
-## Dockerfile
+## Container MongoDB contenant le serveur de base de données
+
+Téléchargement et run du container : mongodb/mongodb-community-server<br/>
+ports binding lors du run (dans notre cas) : 27016:27017
+
+## Container python contenant le script de migration
+
+### Dockerfile
 
   FROM alpine:3.22
   
@@ -31,10 +38,10 @@ Avoir Docker déjà installé.
   CMD ["sh", "-c", "tail -f /dev/null"]<br/>
 
 
-## Arborescence du dossier copié dans le container (command dockerfile : COPY /migration /migration)
+### Arborescence du dossier copié dans le container (command dockerfile : COPY /migration /migration)
 <img width="340" height="668" alt="image" src="https://github.com/user-attachments/assets/1e5beec5-f375-43a8-890e-66a179a7d08a" />
 
-## contenu du fichier pyproject.toml
+### contenu du fichier pyproject.toml
 
 [project]<br/>
 name = "csv-mongodb"<br/>
@@ -50,4 +57,4 @@ requires = ["poetry-core>=2.0.0,<3.0.0"]<br/>
 build-backend = "poetry.core.masonry.api"<br/>
 
 
-## Lancement des scripts
+## Container python contenant le script de test
