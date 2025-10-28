@@ -15,7 +15,7 @@ Avoir Docker déjà installé.
   
   ### Notre répertoire de travail sera la racine du système de fichier du conteneur
   WORKDIR /·
-  
+  ### copie du dossier dans le container
   COPY /migration /migration
   
   ### On met à jour les dépendances système afin de limiter les risques 
@@ -32,5 +32,25 @@ Avoir Docker déjà installé.
 
 ## Arborescence du dossier copié dans le container (dockerfile command lors du Build de l'image : COPY /migration /migration)
 <img width="340" height="668" alt="image" src="https://github.com/user-attachments/assets/1e5beec5-f375-43a8-890e-66a179a7d08a" />
+
+## contenu du fichier pyproject.toml
+
+[project]
+name = "csv-mongodb"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "******"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pymongo (>=4.15.3,<5.0.0)"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
 
 ## Lancement des scripts
