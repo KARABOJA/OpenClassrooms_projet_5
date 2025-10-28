@@ -12,6 +12,9 @@ Lancer la commande "docker build -t nomimage:flag ."<br/>
 ## 1 : Lancer un conteneur<br/>
 Lancer la commande "docker run -v folderToCopy:/migration -d -t nomimage"<br/>
 
+## 2 : Arborescence de notre conteneur dans notre exemple
+<img width="301" height="464" alt="image" src="https://github.com/user-attachments/assets/97e15eb3-ddc0-4447-9344-4aa5b73412b6" />
+
 # Install de l'environnement python avec Poetry
 
 ## 1 : Rentrer dans le conteneur afin de pouvoir interagir en ligne de commande<br/>
