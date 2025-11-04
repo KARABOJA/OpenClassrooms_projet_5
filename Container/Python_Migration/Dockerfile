@@ -3,7 +3,6 @@ FROM alpine:3.22
 # Notre répertoire de travail sera la racine du système de fichier du conteneur
 WORKDIR /·
 
-# copie du dossier dans le container
 COPY /migration /migration
 
 # On met à jour les dépendances système afin de limiter les risques 
