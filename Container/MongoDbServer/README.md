@@ -36,10 +36,4 @@ db.createUser(
 ## Vérifier que 3 utilisateurs existent (admin, dev, user)
 db.system.users.find()
 
-## Schéma de la base de données
-
-
-
-## Schéma de la base de données format json
-
 
