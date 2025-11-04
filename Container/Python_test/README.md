@@ -1,4 +1,4 @@
-
+# Prérequis : "docker compose build" et "docker compose up" effectué, base de données mongoDb coneteneurisée et paramétrée, migration effectuée.
 
 # entrer dans le container de test afin de vérifier que la migration s'est bien effectué
 docker exec -it "container ID" sh
