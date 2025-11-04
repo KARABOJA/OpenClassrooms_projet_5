@@ -2,3 +2,7 @@
 
 Téléchargement et run du container : mongodb/mongodb-community-server<br/>
 ports binding lors du run (dans notre cas) : 27016:27017
+
+## Schéma de la base de données
+
+## Schéma de la base de données format json
