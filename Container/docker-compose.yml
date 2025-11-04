@@ -1,0 +1,32 @@
+services:
+  database:
+    image: mongodb/mongodb-community-server:latest
+    ports:
+      - 27016:27017
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongoadmin
+      MONGO_INITDB_ROOT_PASSWORD: mongopassword
+    volumes:
+      - migration_database_data:/db/data
+    networks:
+      - migration_network
+  migration:
+    build:
+      context: ./dockerMigration
+    depends_on:
+      - database
+    networks:
+      - migration_network
+  test:
+    build:
+      context: ./dockerTest
+    depends_on:
+      - database
+    networks:
+      - migration_network
+networks:
+  migration_network:
+    driver: bridge
+volumes:
+  migration_database_data:
