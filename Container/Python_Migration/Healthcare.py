@@ -3,8 +3,8 @@ import csv
 from pymongo import MongoClient
 
 # MongoDB connection
-client = MongoClient('mongodb://mongoadmin:mongopassword@host.docker.internal', 27016)
-db = client['local']
+client = MongoClient('mongodb://dev:dev@host.docker.internal', 27016)
+db = client['test']
 collection = db['collHealthCare']
 
 # CSV file path
