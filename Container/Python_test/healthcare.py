@@ -4,11 +4,12 @@ from pymongo import MongoClient
 import pandas as pd
 
 # MongoDB connection
-client = MongoClient('mongodb://mongoadmin:mongopassword@host.docker.internal', 27016)
-db = client['local']
+client = MongoClient('mongodb://dev:dev@host.docker.internal', 27016)
+db = client['test']
 collection = db['collHealthCare']
 
-csvDataFrame = pd.read_csv("healthcare_dataset.csv")
+csvDataFrame = pd.read_csv("healthcare_dataset.csv", dtype = str)
+
 mongoDbDataFrame = pd.DataFrame(list(db.collHealthCare.find({})))
 mongoDbDataFrame = mongoDbDataFrame.drop('_id', axis=1)
 
@@ -23,8 +24,7 @@ errors = []
 for line in range(0, 1000) :
     for column in range (0, mongoDbDataFrame.shape[1]) :
         if not str(csvDataFrame.iloc[line, column]) == str(mongoDbDataFrame.iloc[line, column]) :
-            errors.append("line : " + str(line) + " - " + "column : " + str(column))
+            errors.append("line : " + str(line) + " - " + "column : " + str(column) + " -------- " + str(csvDataFrame.iloc[line, column]) + " -------- " + str(mongoDbDataFrame.iloc[line, column]))
 assert not errors, "errors occured:\n{}".format("\n".join(errors))
 
 print("script terminé")
-sys.exit()
