@@ -4,7 +4,7 @@ from pymongo import MongoClient
 import pandas as pd
 
 # MongoDB connection
-client = MongoClient('mongodb://mongoadmin:mongopassword@localhost', 27016)
+client = MongoClient('mongodb://mongoadmin:mongopassword@host.docker.internal', 27016)
 db = client['local']
 collection = db['collHealthCare']
 
