@@ -5,7 +5,7 @@ Maintenez et documentez un système de stockage des données sécurisé et perfo
 L'objectif est de migrer des données d'un fichier CSV vers une base de données MongoDB via un script python, puis de tester l'integrité des données insérées via un script python, tout cela dans une architecture contenairisée (Docker).
 
 # Pré-requis 
-Avoir Docker déjà installé.
+Avoir Docker et docker compose déjà installé.
 
 # Architecture
 
