@@ -1,34 +1,22 @@
-# Build de l'image
+# Prérequis : "docker compose build" et "docker compose up" effectué, base de données mongoDb coneteneurisée et paramétrée
 
-## 1 : Se positionner dans le dossier où se trouve le dockerfile
+# entrer dans le container de migration afin d'effectuer la migration des données
+docker exec -it "container ID" sh
 
-## 2 : Build de l'image<br/>
-Lancer la commande "docker build -t nomimage:flag ."<br/>
-  - -t désigne"<br/>
-  - le "." à la fin indique "<br/>
+# Revenir à la base 
+cd ..
 
-# Run du conteneur
+# se positionner dans le dossier ou se trouve le fichier .toml afin de créer l'environnement virtuel python
+cd migration/csv_mongoDb
 
-## 1 : Lancer un conteneur<br/>
-Lancer la commande "docker run -v folderToCopy:/migration -d -t nomimage"<br/>
+# Installer les dépendances contenu dans le fichier toml (pymongo)
+poetry install
 
-## 2 : Arborescence de notre conteneur dans notre exemple
-<img width="301" height="464" alt="image" src="https://github.com/user-attachments/assets/97e15eb3-ddc0-4447-9344-4aa5b73412b6" />
+# activer l'environnement virtuel poetry
+eval $(poetry env activate)
 
-# Install de l'environnement python avec Poetry
+# se positionner dans le dossier ou se trouve le script
+cd healthCare
 
-## 1 : Rentrer dans le conteneur afin de pouvoir interagir en ligne de commande<br/>
-Lancer la commande "docker exec -it nomConteneur sh"<br/>
-
-## 2 : Se positionner dans le dossier où se trouve le fichier pyproject.toml afin d'installer l'environnement virtuel python
-Lancer les commandes suivantes :<br/>
-"cd .."<br/>
-"cd migration/csv_mongoDb"<br/>
-"poetry install" afin d'installer l'environnement virtuel python<br/>
-"eval $(poetry env activate)" afin de rentrer dans l'environnement virtuel python<br/>
-
-# Lancement du script
-
-Lancer les commandes :<br/>
-"cd healthCare"<br/>
-"python healthcare.py"<br/>
+# lancer le script de migration avec python
+python healthcare.py
