@@ -22,3 +22,8 @@ Voir fichier Container/Python_migration/README.md
 ## Container python contenant le script de test
 
 Voir fichier Container/Python_test/README.md
+
+## Schéma json des données
+
+<img width="1298" height="750" alt="image" src="https://github.com/user-attachments/assets/7ee4c254-63c2-45ff-92c6-e67223a450cf" />
+
