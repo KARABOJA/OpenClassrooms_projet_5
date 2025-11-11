@@ -11,19 +11,36 @@ Avoir Docker et docker compose déjà installé.
 
 <img width="1152" height="648" alt="DockerSchema" src="https://github.com/user-attachments/assets/7b74e4a0-2cbc-4e97-aa74-898fd0a089c8" />
 
-## Container MongoDB contenant le serveur de base de données
+## Configuration du container MongoDB
 
-Voir fichier Container/MongoDbServer/README.md
+ - Dockerfile
+ - requirements.txt
+ - scripts/createUser.js
 
-## Container python contenant le script de migration
+## Configuration du container python (migration)
 
-Voir fichier Container/Python_migration/README.md
+ - Dockerfile
+ - requirements.txt
+ - scripts/scriptMigration.py
 
-## Container python contenant le script de test
+## Configuration du container python (test)
 
-Voir fichier Container/Python_test/README.md
+ - Dockerfile
+ - requirements.txt
+ - scripts/scriptTest.py
 
 ## Schéma json des données
 
-<img width="1298" height="750" alt="image" src="https://github.com/user-attachments/assets/7ee4c254-63c2-45ff-92c6-e67223a450cf" />
+<img width="508" height="425" alt="image" src="https://github.com/user-attachments/assets/4cf82f3a-73f0-46ed-9d7f-d49ff4a2c72f" />
+
+## Lancement des conteneurs
+
+### 1 : mettre son fichier CSV dans le dossier "dataToMigrate"
+
+### 2 : Executer le fichier docker-compose.yml (création de la bdd, lancement de la migration, vérification de la migration) avec les commandes suivante :
+
+docker compose build<br>
+docker compose up
+
+### 3 : ouvrir le dossier "resultatMigration" et verifier que le script d'erreur pytest n'a pas relevé d'erreurs (une erreur est volontairement faite afin que le fichier logs.xml soit crée)
 
