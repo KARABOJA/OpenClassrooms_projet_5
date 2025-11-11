@@ -1,32 +1,62 @@
 services:
   database:
-    image: mongodb/mongodb-community-server:latest
+    env_file: 
+      - ./default.env
+    environment:
+      MONGO_INITDB_ROOT_USERNAME_FILE: /run/secrets/DB_ROOT_LOGIN
+      MONGO_INITDB_ROOT_PASSWORD_FILE: /run/secrets/DB_ROOT_PASSWORD
+    secrets:
+      - DB_ROOT_LOGIN
+      - DB_ROOT_PASSWORD
+    build:
+      context: ./containerDatabase
+    healthcheck:
+       test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
     ports:
       - 27016:27017
     restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: mongoadmin
-      MONGO_INITDB_ROOT_PASSWORD: mongopassword
     volumes:
       - migration_database_data:/db/data
+      - ./logs:/logs
     networks:
       - migration_network
   migration:
+    env_file:
+      - path: ./default.env
     build:
-      context: ./dockerMigration
+      context: ./containerMigration
+      additional_contexts:
+        datatomigrate: /dataToMigrate
+    volumes:
+      - ./logs:/logs
     depends_on:
-      - database
+      database:
+        condition: service_healthy
     networks:
       - migration_network
   test:
+    env_file:
+      - path: ./default.env
     build:
-      context: ./dockerTest
+      context: ./containerTest
+      additional_contexts:
+        datatomigrate: /dataToMigrate
+    volumes:
+      - ./logs:/logs
     depends_on:
-      - database
+      database:
+        condition: service_healthy
+      migration:
+        condition: service_completed_successfully
     networks:
       - migration_network
 networks:
   migration_network:
     driver: bridge
+secrets:
+  DB_ROOT_LOGIN:
+    file: secrets/DB_ROOT_LOGIN.txt
+  DB_ROOT_PASSWORD:
+    file: secrets/DB_ROOT_PASSWORD.txt
 volumes:
   migration_database_data:
