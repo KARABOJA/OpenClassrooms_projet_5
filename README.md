@@ -25,7 +25,7 @@ Voir fichier Container/Python_test/README.md
 
 ## Schéma json des données
 
-<img width="1298" height="750" alt="image" src="https://github.com/user-attachments/assets/7ee4c254-63c2-45ff-92c6-e67223a450cf" />
+<img width="508" height="425" alt="image" src="https://github.com/user-attachments/assets/4cf82f3a-73f0-46ed-9d7f-d49ff4a2c72f" />
 
 ## Lancement des conteneurs
 
