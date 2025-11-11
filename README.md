@@ -9,7 +9,7 @@ Avoir Docker et docker compose déjà installé.
 
 # Architecture
 
-<img width="1152" height="648" alt="DockerSchema" src="https://github.com/user-attachments/assets/c22d60e4-bce1-4020-a973-b87459ab7e52" />
+<img width="1152" height="648" alt="DockerSchema" src="https://github.com/user-attachments/assets/7b74e4a0-2cbc-4e97-aa74-898fd0a089c8" />
 
 ## Container MongoDB contenant le serveur de base de données
 
