@@ -27,3 +27,14 @@ Voir fichier Container/Python_test/README.md
 
 <img width="1298" height="750" alt="image" src="https://github.com/user-attachments/assets/7ee4c254-63c2-45ff-92c6-e67223a450cf" />
 
+## Lancement des conteneurs
+
+### 1 : mettre son fichier CSV dans le dossier "dataToMigrate"
+
+### 2 : Executer le fichier docker-compose.yml (création de la bdd, lancement de la migration, vérification de la migration) avec les commandes suivante :
+
+docker compose build
+docker compose up
+
+### 3 : ouvrir le fichier "resultatMigration" (situé dans le conteneur de test) et verifier que le script d'erreur pytest n'a pas relevé d'erreurs (une erreur est volontairement faite afin de verifier le bon fonctionnement de l'architecture Docker)
+
