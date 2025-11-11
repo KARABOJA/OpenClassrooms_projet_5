@@ -11,17 +11,23 @@ Avoir Docker et docker compose déjà installé.
 
 <img width="1152" height="648" alt="DockerSchema" src="https://github.com/user-attachments/assets/c22d60e4-bce1-4020-a973-b87459ab7e52" />
 
-## Container MongoDB contenant le serveur de base de données
+## Configuration du container MongoDB
 
-Voir fichier Container/MongoDbServer/README.md
+ - Dockerfile
+ - requirements.txt
+ - scripts/createUser.js
 
-## Container python contenant le script de migration
+## Configuration du container python (migration)
 
-Voir fichier Container/Python_migration/README.md
+ - Dockerfile
+ - requirements.txt
+ - scripts/scriptMigration.py
 
-## Container python contenant le script de test
+## Configuration du container python (test)
 
-Voir fichier Container/Python_test/README.md
+ - Dockerfile
+ - requirements.txt
+ - scripts/scriptTest.py
 
 ## Schéma json des données
 
