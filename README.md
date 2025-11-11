@@ -36,5 +36,5 @@ Voir fichier Container/Python_test/README.md
 docker compose build<br>
 docker compose up
 
-### 3 : ouvrir le fichier "resultatMigration" (situé dans le conteneur de test) et verifier que le script d'erreur pytest n'a pas relevé d'erreurs (une erreur est volontairement faite afin de verifier le bon fonctionnement de l'architecture Docker)
+### 3 : ouvrir le doccier "resultatMigration" et verifier que le script d'erreur pytest n'a pas relevé d'erreurs (une erreur est volontairement faite afin que le fichier logs.xml soit crée)
 
