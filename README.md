@@ -11,19 +11,31 @@ Avoir Docker et docker compose déjà installé.
 
 <img width="1152" height="648" alt="DockerSchema" src="https://github.com/user-attachments/assets/7b74e4a0-2cbc-4e97-aa74-898fd0a089c8" />
 
-## Configuration du container MongoDB
+## Configuration du Docker-compose (dossier racine)
+
+- docker-compose.yml
+- default.env
+- dossier vide : logs/
+- secrets/DB_ROOT_LOGIN.txt
+- secrets/DB_ROOT_PASSWORD.txt
+- dataToMigrate/healthCare.csv
+- conteneur MongoDB - dossier : containerDatabase/
+- conteneur de migration - dossier : containerMigration/
+- conteneur de test - dossier : containerTest/
+
+## Configuration du container MongoDB (dossier containerDatabase/)
 
  - Dockerfile
  - requirements.txt
  - scripts/createUser.js
 
-## Configuration du container python (migration)
+## Configuration du container python (dossier containerMigration/)
 
  - Dockerfile
  - requirements.txt
  - scripts/scriptMigration.py
 
-## Configuration du container python (test)
+## Configuration du container python (dossier containerTest/)
 
  - Dockerfile
  - requirements.txt
@@ -35,7 +47,7 @@ Avoir Docker et docker compose déjà installé.
 
 ## Lancement des conteneurs
 
-### 1 : mettre son fichier CSV dans le dossier "dataToMigrate"
+### 1 : mettre son fichier CSV dans le dossier "dataToMigrate" (fichier déjà présent)
 
 ### 2 : Executer le fichier docker-compose.yml (création de la bdd, lancement de la migration, vérification de la migration) avec les commandes suivante :
 
